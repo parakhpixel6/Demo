@@ -163,7 +163,7 @@ html,body {
 .main {
     width: 100%;
     overflow-x: hidden;
-    min-height: 100vh;
+    // min-height: 100vh;
     // background-color: rgba(235, 111, 111, 0.247);
     & nav {
         position: fixed;
@@ -198,6 +198,10 @@ html,body {
             font-size: 18px;
             line-height: 24px;
             text-align: center;
+
+            & a {
+                text-decoration: none;
+            }
 
             & .logoHead-1 {
                 letter-spacing: 1px;
@@ -391,7 +395,7 @@ html,body {
         & .carousel {
             height: 30vh;
             width: 100%;
-            background-color: rgba(194, 111, 111, 0.507);
+            background-color: #11275d9d;
             padding: 2% 20%;
 
             .swiper {
@@ -407,6 +411,14 @@ html,body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                object-fit: contain;
+                object-position: center;
+                overflow: hidden;
+
+                & img {
+                    height: 100%;
+                    width: 100%;
+                }
             }
           
             .swiper-slide img {
@@ -418,8 +430,11 @@ html,body {
 
             .swiper-pagination {
                 top: 102%;
+                display: none;
             }
         }
+
+
     }
 }
 
