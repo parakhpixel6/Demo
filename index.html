@@ -7,21 +7,66 @@
         <title>Demo PSD</title>
         <link rel="stylesheet" href="style.css">
         <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     </head>
 
     <body>
         <div class="loader-container">
             <div class="loader-bar" id="loader-bar"></div>
         </div>
-        <div class="container">
-            <nav>
-                <div class="logo"></div>
-                <div class="menu-items">
-
+        <div class="main">
+            <nav class="d-flex align-center justify-between navbar">
+                <div class="d-flex g-8 justify-evenly align-center">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="./favicon.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="company-name">
+                        <h3 class="logoHead-1">LOSANGELES</h3>
+                        <h3 class="logoHead-2">MOUNTAINS</h3>
+                    </div>
+                </div>
+                <div class="menu-items d-flex align-center justify-evenly g-16">
+                    <a class="menu-item" href="#history">1. History</a>
+                    <a class="menu-item" href="#climb">2. Climb</a>
                 </div>
             </nav>
+            <div class="section-1">
+                <div class="hero-heading">
+                    <h1 class="heading-1">LOSANGELES</h1>
+                    <h1 class="heading-2">MOUNTAINS</h1>
+                </div>
+            </div>
+            <div class="section-2 d-flex flex-d-column justify-between" id="history">
+                <div class="section-head">
+                    <div class="history-head d-flex pos-relative width-content">
+                        <h1 class="sectionHead-1">01.</h1>
+                        <h1 class="sectionHead-2">History</h1>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint voluptates ut ducimus amet. Architecto laboriosam aspernatur corporis qui dolorem incidunt ipsum ipsa eveniet amet porro. Suscipit delectus incidunt iure ullam nesciunt quae voluptatem perferendis id, molestias optio aliquid provident eaque porro pariatur sapiente aut! Ullam.</p>
+                </div>
+                <div class="carousel">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">Slide 1</div>
+                          <div class="swiper-slide">Slide 2</div>
+                          <div class="swiper-slide">Slide 3</div>
+                          <div class="swiper-slide">Slide 4</div>
+                          <div class="swiper-slide">Slide 5</div>
+                          <div class="swiper-slide">Slide 6</div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-3" id="climb">
+
+            </div>
         </div>
-        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="./script.js"></script>
+
     </body>
 
 </html>
