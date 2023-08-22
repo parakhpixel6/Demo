@@ -1,26 +1,369 @@
 /* styles.css */
+@font-face {
+  font-family: Bebas;
+  src: url(./assets/fonts/font1.woff2);
+}
+@font-face {
+  font-family: Lato;
+  src: url(./assets/fonts/font2.woff2);
+}
+@font-face {
+  font-family: Number;
+  src: url(./assets/fonts/font5.woff2);
+}
+@font-face {
+  font-family: Section Heading;
+  src: url(./assets/fonts/font3.woff2);
+}
+@font-face {
+  font-family: Paragraph;
+  src: url(./assets/fonts/font4.woff2);
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+html::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  width: 6px;
+}
+html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgb(122, 153, 217)), color-stop(0.72, rgb(73, 125, 189)), color-stop(0.86, rgb(28, 58, 148)));
+}
+
 .loader-container {
-    position: fixed;
-    top: -2px;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    /* Adjust height as needed */
-    background-color: transparent;
+  position: fixed;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  /* Adjust height as needed */
+  background-color: transparent;
+  z-index: 10;
 }
 
 .loader-bar {
-    height: 100%;
-    width: 0;
-    background: rgb(0, 100, 154);
-    background: linear-gradient(90deg, rgba(0, 100, 154, 1) 49%, rgba(8, 8, 8, 1) 100%, rgba(0, 0, 0, 1) 100%);
-    /* Loader bar color */
-    transition: width 0.3s;
-    /* Transition effect for smoother width change */
+  height: 100%;
+  width: 0;
+  background: rgba(0, 100, 154, 0.288);
+  background: linear-gradient(90deg, rgba(0, 100, 154, 0.288) 49%, rgba(8, 8, 8, 0.199) 100%, rgba(0, 0, 0, 0.582) 100%);
+  /* Loader bar color */
+  transition: width 0.3s;
+  /* Transition effect for smoother width change */
 }
 
-.content {
-    /* Styles for your main content */
-    margin-top: 20px;
-    /* Adjust margin to make space for loader bar */
+.d-flex {
+  display: flex;
 }
+
+.flex-d-column {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: start;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.g-16 {
+  gap: 16px;
+}
+
+.g-32 {
+  gap: 32px;
+}
+
+.g-8 {
+  gap: 8px;
+}
+
+.pos-absolute {
+  position: absolute;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.width-content {
+  width: fit-content;
+}
+
+.main {
+  width: 100%;
+  overflow-x: hidden;
+}
+.main nav {
+  position: fixed;
+  padding: 1% 20%;
+  width: 100%;
+  z-index: 9;
+  background-color: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+@media (max-width: 767px) {
+  .main nav {
+    padding: 2% 5%;
+  }
+}
+.main nav .logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  border: 1px solid black;
+}
+.main nav .logo img {
+  height: 100%;
+  width: 100%;
+}
+.main nav .company-name {
+  display: none;
+  font-family: Bebas;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
+.main nav .company-name a {
+  text-decoration: none;
+}
+.main nav .company-name .logoHead-1 {
+  letter-spacing: 1px;
+  color: #222222;
+  background-image: -webkit-linear-gradient(270deg, hsl(0, 0%, 13%) 18%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.main nav .company-name .logoHead-2 {
+  letter-spacing: 2px;
+  color: #11275d;
+  background-image: -webkit-linear-gradient(270deg, #11275d 55%, #171717 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.main nav .menu-items {
+  font-family: Lato;
+}
+.main nav .menu-items a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #fff;
+}
+.main .section-1 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url(./assets/img/hero-bg.png);
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  .main .section-1 {
+    background-position: bottom;
+  }
+}
+.main .section-1 .hero-heading {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 50%;
+  height: fit-content;
+  width: fit-content;
+  font-family: Bebas;
+  line-height: 150px;
+  font-size: 80px;
+}
+@media (max-width: 767px) {
+  .main .section-1 .hero-heading {
+    top: 48%;
+    line-height: 80px;
+    font-size: 40px;
+  }
+}
+.main .section-1 .hero-heading .heading-1 {
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 2px;
+  /** TEXT GRADIENT */
+  color: #222222;
+  background-image: -webkit-linear-gradient(270deg, hsl(0, 0%, 13%) 18%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.main .section-1 .hero-heading .heading-2 {
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 6px;
+  /** TEXT GRADIENT */
+  color: #11275d;
+  background-image: -webkit-linear-gradient(270deg, #11275d 55%, #171717 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+@media (max-width: 767px) {
+  .main .section-1 .hero-heading .heading-2 {
+    color: rgba(4, 31, 83, 0.9803921569);
+    background-image: -webkit-linear-gradient(270deg, rgba(4, 31, 83, 0.9803921569) 55%, #171717 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.main .section-2 {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url(./assets/img/peak-bg.png);
+  background-size: cover;
+}
+.main .section-2 .section-head {
+  padding: 4% 20%;
+}
+@media (max-width: 767px) {
+  .main .section-2 .section-head {
+    padding: 30% 7%;
+  }
+}
+.main .section-2 .section-head .history-head {
+  height: 30vh;
+}
+.main .section-2 .section-head .sectionHead-1 {
+  font-family: Number;
+  font-size: 192px;
+  letter-spacing: 2px;
+  color: #11275d;
+  background-image: -webkit-linear-gradient(270deg, #4a5d8b 55%, #171717 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+@media (max-width: 767px) {
+  .main .section-2 .section-head .sectionHead-1 {
+    font-size: 135px;
+  }
+}
+.main .section-2 .section-head .sectionHead-2 {
+  font-family: Section Heading;
+  text-transform: uppercase;
+  position: absolute;
+  line-height: 148px;
+  font-size: 56px;
+  left: 81.5%;
+  top: 30%;
+  color: #38425f;
+}
+@media (max-width: 767px) {
+  .main .section-2 .section-head .sectionHead-2 {
+    font-size: 42px;
+    left: 80.5%;
+    top: 14%;
+  }
+}
+.main .section-2 .section-head p {
+  color: black;
+  font-family: Paragraph;
+  margin-left: 132px;
+  line-height: 24px;
+  font-weight: 600;
+  word-spacing: 2px;
+}
+@media (max-width: 767px) {
+  .main .section-2 .section-head p {
+    margin-left: 0;
+    color: #fff;
+  }
+}
+.main .section-2 .carousel {
+  height: 30vh;
+  width: 100%;
+  background-color: rgba(17, 39, 93, 0.6156862745);
+  padding: 2% 20%;
+}
+.main .section-2 .carousel .swiper {
+  width: 100%;
+  height: 100%;
+  overflow-y: unset;
+}
+.main .section-2 .carousel .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  object-position: center;
+  overflow: hidden;
+}
+.main .section-2 .carousel .swiper-slide img {
+  height: 100%;
+  width: 100%;
+}
+.main .section-2 .carousel .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main .section-2 .carousel .swiper-pagination {
+  top: 102%;
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

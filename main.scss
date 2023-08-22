@@ -1,0 +1,440 @@
+/* styles.css */
+
+
+//Fontface 
+
+@font-face {
+    font-family: Bebas;
+    src: url(./assets/fonts/font1.woff2);
+}
+
+
+@font-face {
+    font-family: Lato;
+    src: url(./assets/fonts/font2.woff2);
+}
+
+
+@font-face {
+    font-family: Number;
+    src: url(./assets/fonts/font5.woff2);
+}
+
+
+@font-face {
+    font-family: Section Heading;
+    src: url(./assets/fonts/font3.woff2);
+}
+
+
+@font-face {
+    font-family: Paragraph;
+    src: url(./assets/fonts/font4.woff2);
+}
+
+
+//CSS Boilerplate
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+
+    &::-webkit-scrollbar-track
+    {
+        
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar
+    {
+        width: 6px;
+        
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        background-image: -webkit-gradient(linear,
+        left bottom,
+        left top,
+        color-stop(0.44, rgb(122,153,217)),
+        color-stop(0.72, rgb(73,125,189)),
+        color-stop(0.86, rgb(28,58,148)));
+    }
+}
+
+//Loader 
+.loader-container {
+    position: fixed;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    /* Adjust height as needed */
+    background-color: transparent;
+    z-index: 10;
+}
+
+.loader-bar {
+    height: 100%;
+    width: 0;
+    background: rgba(0, 100, 154, 0.288);
+    background: linear-gradient(90deg, rgba(0, 100, 154, 0.288) 49%, rgba(8, 8, 8, 0.199) 100%, rgba(0, 0, 0, 0.582) 100%);
+    /* Loader bar color */
+    transition: width 0.3s;
+    /* Transition effect for smoother width change */
+}
+
+
+//Common Classes
+
+.d-flex {
+    display: flex;
+}
+
+.flex-d-column {
+    flex-direction: column;
+}
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: end;
+}
+
+.justify-start {
+    justify-content: start;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-start {
+    align-items: start;
+}
+
+.align-end {
+    align-items: end;
+}
+
+.g-16  {
+    gap: 16px;
+}
+
+.g-32  {
+    gap: 32px;
+}
+
+.g-8  {
+    gap: 8px;
+}
+
+.pos-absolute {
+    position: absolute;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.width-content {
+    width: fit-content;
+}
+
+.main {
+    width: 100%;
+    overflow-x: hidden;
+    // min-height: 100vh;
+    // background-color: rgba(235, 111, 111, 0.247);
+    & nav {
+        position: fixed;
+        padding: 1% 20%;
+        width: 100%;
+        z-index: 9;
+        background-color: transparent;
+        transition: background-color 0.3s ease-in-out;
+
+        @media (max-width: 767px) {
+            padding: 2% 5%;
+        }
+
+        & .logo {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            overflow: hidden;
+            border: 1px solid black;
+
+            & img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        & .company-name {
+            display: none;
+            font-family: Bebas;
+            font-size: 18px;
+            line-height: 24px;
+            text-align: center;
+
+            & a {
+                text-decoration: none;
+            }
+
+            & .logoHead-1 {
+                letter-spacing: 1px;
+                color: #222222; 
+                background-image: -webkit-linear-gradient(270deg, hsl(0, 0%, 13%) 18%, #000000 100%); 
+                background-clip: text; 
+                -webkit-background-clip: text; 
+                text-fill-color: transparent; 
+                -webkit-text-fill-color: transparent;
+            }
+
+            & .logoHead-2 {
+                letter-spacing: 2px;
+                color: #11275d;
+                background-image: -webkit-linear-gradient(270deg, #11275d 55%, #171717 100%);
+                background-clip: text; 
+                -webkit-background-clip: text; 
+                text-fill-color: transparent; 
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        & .menu-items {
+            font-family: Lato;
+            
+            & a {
+                color: #fff;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: 1px;
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+
+    & .section-1 {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        // background-color: rgba(127, 255, 212, 0.233);
+        background-image: url(./assets/img/hero-bg.png);
+        // background-position: center;
+        background-size: cover;
+
+        @media (max-width: 767px) {
+            background-position: bottom;
+        }
+
+        
+
+        & .hero-heading {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 45%;
+            left: 50%;
+            height: fit-content;
+            width: fit-content;
+            font-family: Bebas;
+            line-height: 150px;
+            font-size: 80px;
+
+            @media (max-width: 767px) {
+                top: 48%;
+                // line-height: 92px;
+                // font-size: 48px;
+                line-height: 80px;
+                font-size: 40px;
+            }
+        
+            
+            & .heading-1 {
+                text-align: center;
+                font-weight: 500;
+                letter-spacing: 2px;
+                
+                /** TEXT GRADIENT */ 
+                color: #222222; 
+                background-image: -webkit-linear-gradient(270deg, hsl(0, 0%, 13%) 18%, #000000 100%); 
+                background-clip: text; 
+                -webkit-background-clip: text; 
+                text-fill-color: transparent; 
+                -webkit-text-fill-color: transparent;
+            }
+            
+            & .heading-2 {
+                text-align: center;
+                font-weight: 500;
+                letter-spacing: 6px;
+
+                
+                /** TEXT GRADIENT */ 
+                color: #11275d;
+                background-image: -webkit-linear-gradient(270deg, #11275d 55%, #171717 100%);
+                background-clip: text; 
+                -webkit-background-clip: text; 
+                text-fill-color: transparent; 
+                -webkit-text-fill-color: transparent;
+
+                @media (max-width: 767px) {
+                    color: #041f53fa;
+                    background-image: -webkit-linear-gradient(270deg, #041f53fa 55%, #171717 100%);
+                    background-clip: text; 
+                    -webkit-background-clip: text; 
+                    text-fill-color: transparent; 
+                    -webkit-text-fill-color: transparent;
+                }
+          
+        
+            }
+        }
+    }
+
+    & .section-2 {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background-image: url(./assets/img/peak-bg.png);
+        // background-position: center;
+        background-size: cover;
+
+        & .section-head {
+            // padding: 6% 20%;
+            padding: 4% 20%;
+        
+          
+
+            @media (max-width: 767px) {
+                padding: 30% 7%;
+            }
+
+            & .history-head {
+                height: 30vh;
+            }
+
+            & .sectionHead-1 {
+                font-family: Number;
+                // font-size: 135px;
+                font-size: 192px;
+                letter-spacing: 2px;
+                color: #11275d;
+                background-image: -webkit-linear-gradient(270deg, #4a5d8b 55%, #171717 100%);
+                background-clip: text; 
+                -webkit-background-clip: text; 
+                text-fill-color: transparent; 
+                -webkit-text-fill-color: transparent;
+
+                @media (max-width: 767px) {
+                    font-size: 135px;
+                }
+            }
+
+            & .sectionHead-2 {
+                font-family: Section Heading;
+                text-transform: uppercase;
+                position: absolute;
+                line-height: 148px;
+                // font-size: 42px;
+                // left: 80.5%;
+                // top: 18%;
+                font-size: 56px;
+                left: 81.5%;
+                top: 30%;
+                color: #38425f;
+
+                @media (max-width: 767px) {
+                    font-size: 42px;
+                    left: 80.5%;
+                    top: 14%;
+                }
+            }
+
+            & p {
+                color: black;
+                font-family: Paragraph;
+                margin-left: 132px;
+                line-height: 24px;
+                font-weight: 600;
+                word-spacing: 2px;
+
+                @media (max-width: 767px) {
+                    margin-left: 0;
+                    color: #fff;
+
+                }
+            }
+        }
+
+        & .carousel {
+            height: 30vh;
+            width: 100%;
+            background-color: #11275d9d;
+            padding: 2% 20%;
+
+            .swiper {
+                width: 100%;
+                height: 100%;
+                overflow-y: unset;
+            }
+          
+            .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                object-fit: contain;
+                object-position: center;
+                overflow: hidden;
+
+                & img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+          
+            .swiper-slide img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .swiper-pagination {
+                top: 102%;
+                display: none;
+            }
+        }
+
+
+    }
+}
+
