@@ -20,34 +20,34 @@ window.onload = function () {
 
 //Navbar on different section
 
-// const history = document.getElementById("history");
-// // const climb = document.getElementById("climb");
-// const navbar = document.querySelector(".navbar");
-// const menuItems = document.querySelectorAll(".menu-item");
-// const companyName = document.querySelector(".company-name");
+const history = document.getElementById("history");
+// const climb = document.getElementById("climb");
+const navbar = document.querySelector(".navbar");
+const menuItems = document.querySelectorAll(".menu-item");
+const companyName = document.querySelector(".company-name");
 
-// const observer = new IntersectionObserver(entries => {
-//   entries.forEach(entry => {
-//     // When the second section is at the top
-//     if ((entry.target.id === "history") && entry.isIntersecting) {
-//         navbar.style.backgroundColor = "#fff"; // Change this color as needed
-//         menuItems.forEach(menuItem => {
-//             menuItem.style.color = "#000"; // Change this color as needed
-//             menuItem.style.borderBottom = "1px solid #000"; // Change this color as needed
-//         });
-//         companyName.style.display="block";
-//     } else {
-//         menuItems.forEach(menuItem => {
-//             menuItem.style.borderBottom = "1px solid #fff"; // Change this color as needed
-//             menuItem.style.color = "#fff"; // Change this color as needed
-//         })
-//         companyName.style.display="none";
-//         navbar.style.backgroundColor = "transparent";
-//     }
-//   });
-// }, { threshold: 1 });
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    // When the second section is at the top
+    if ((entry.target.id === "history") && entry.isIntersecting) {
+        navbar.style.backgroundColor = "#fff"; // Change this color as needed
+        menuItems.forEach(menuItem => {
+            menuItem.style.color = "#000"; // Change this color as needed
+            menuItem.style.borderBottom = "1px solid #000"; // Change this color as needed
+        });
+        companyName.style.display="block";
+    } else {
+        menuItems.forEach(menuItem => {
+            menuItem.style.borderBottom = "1px solid #fff"; // Change this color as needed
+            menuItem.style.color = "#fff"; // Change this color as needed
+        })
+        companyName.style.display="none";
+        navbar.style.backgroundColor = "transparent";
+    }
+  });
+}, { threshold: 1 });
 
-// observer.observe(history);
+observer.observe(history);
 // observer.observe(climb);
 
 
