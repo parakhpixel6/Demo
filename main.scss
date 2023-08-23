@@ -48,16 +48,19 @@ html,body {
     {
         
         border-radius: 0px;
+        display: none;
     }
 
     &::-webkit-scrollbar
     {
         width: 6px;
+        display: none;
         
     }
 
     &::-webkit-scrollbar-thumb
     {
+        display: none;
         border-radius: 0px;
         background-image: -webkit-gradient(linear,
         left bottom,
@@ -444,9 +447,10 @@ html,body {
 
     & .section-3 {
         position: relative;
-        height: 100vh;
+        height: 89vh;
         width: 100%;
         background-color: #fff;
+        overflow-y: hidden;
 
         & .section-head {
                 padding: 4% 20% 0% 20%;
@@ -539,6 +543,132 @@ html,body {
                 padding: 1px 0px;
                 border-bottom: 2px solid #dddddd;
             }
+        }
+
+        & .schedule{
+            height: 62vh;
+            background-image: url(./assets/img/snow-peak.png);
+            background-position: center;
+            background-size: cover;
+            overflow: hidden;
+            padding: 50px 20%;
+
+            @media (max-width: 767px) {
+                padding: 50px 0% 50px 7%;
+            }
+
+            & .calendar-container {
+                height: 300px;
+                width: 352px;
+                background-color: #ddddddbd;
+                overflow: hidden;
+                
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                
+                & .calendar-wrap {
+                    overflow-x: auto;
+                    height: 100%;
+                    width: 200%;
+
+                    & .calendar {
+                        height: 100%;
+                        width: 50%;
+                        
+                        & h1 {
+                            padding: 8px 20px;
+                            font-family: Number;
+                            color: #3e5283;
+                        }
+
+                        & .date-location {
+                            padding: 10px 20px;
+
+                            & p {
+                                font-family: Paragraph;
+                                font-size: 16px;
+                                font-weight: 500;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+
+        
+        
+    }
+    & .footer {
+        height: 7vh;
+        width: 100%;
+        padding: 1% 20%;
+        background-color: #4a5d8b;
+
+        @media (max-width: 767px) {
+            padding: 2% 1%;
+        }
+
+        & .logo {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            overflow: hidden;
+            border: 1px solid black;
+
+            & img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        & .company-name {
+           opacity: 0;
+            font-family: Bebas;
+            font-size: 18px;
+            line-height: 24px;
+            text-align: center;
+
+            & a {
+                text-decoration: none;
+            }
+
+            & .logoHead-1 {
+                letter-spacing: 1px;
+                color: #222222; 
+                background-image: -webkit-linear-gradient(270deg, hsl(0, 0%, 13%) 18%, #000000 100%); 
+                background-clip: text; 
+                -webkit-background-clip: text; 
+                -text-fill-color: transparent; 
+                -webkit-text-fill-color: transparent;
+            }
+
+            & .logoHead-2 {
+                letter-spacing: 2px;
+                color: #11275d;
+                background-image: -webkit-linear-gradient(270deg, #11275d 55%, #171717 100%);
+                background-clip: text; 
+                -webkit-background-clip: text; 
+                -text-fill-color: transparent; 
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        & .copyright {
+            font-family: Number;
+            font-style: italic;
+            list-style: 2px;
+            color: #dddddd8e;
+            font-size: 18px;
+
+            @media (max-width: 767px) {
+                font-size: 14px;
+            }
+            
         }
 
     }
