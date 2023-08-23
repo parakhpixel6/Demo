@@ -212,7 +212,7 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-image: url(./assets/img/hero-bg.png);
+  background-image: url(./assets/img/hero-bg.jpg);
   background-size: cover;
 }
 @media (max-width: 767px) {
@@ -275,7 +275,7 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 .main .section-2 {
   position: relative;
   width: 100%;
-  background-image: url(./assets/img/peak-bg.png);
+  background-image: url(./assets/img/peak-bg.jpg);
   background-size: cover;
 }
 .main .section-2 .section-head {
@@ -458,7 +458,7 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 .main .section-3 .schedule {
   height: 62vh;
-  background-image: url(./assets/img/snow-peak.png);
+  background-image: url(./assets/img/snow-peak.jpg);
   background-position: center;
   background-size: cover;
   overflow: hidden;
