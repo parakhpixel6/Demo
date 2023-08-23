@@ -9,6 +9,7 @@
   "author": "Parakh",
   "license": "ISC",
   "devDependencies": {
+    "sass": "^1.66.1",
     "scss": "^0.2.4"
   }
 }

@@ -18,44 +18,10 @@ window.onload = function () {
 
 
 
-//Navbar on different section
-
-const history = document.getElementById("history");
-// const climb = document.getElementById("climb");
-const navbar = document.querySelector(".navbar");
-const menuItems = document.querySelectorAll(".menu-item");
-const companyName = document.querySelector(".company-name");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    // When the second section is at the top
-    if ((entry.target.id === "history") && entry.isIntersecting) {
-        navbar.style.backgroundColor = "#fff"; // Change this color as needed
-        menuItems.forEach(menuItem => {
-            menuItem.style.color = "#000"; // Change this color as needed
-            menuItem.style.borderBottom = "1px solid #000"; // Change this color as needed
-        });
-        companyName.style.display="block";
-    } else {
-        menuItems.forEach(menuItem => {
-            menuItem.style.borderBottom = "1px solid #fff"; // Change this color as needed
-            menuItem.style.color = "#fff"; // Change this color as needed
-        })
-        companyName.style.display="none";
-        navbar.style.backgroundColor = "transparent";
-    }
-  });
-}, { threshold: 1 });
-
-observer.observe(history);
-// observer.observe(climb);
-
-
-
 //Swiper JS
 
 let swiper = new Swiper(".mySwiper", {
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 30,
     autoplay: {
         delay: 2000,
@@ -70,14 +36,64 @@ let swiper = new Swiper(".mySwiper", {
         768: {
             slidesPerView: 3,
             spaceBetween: 30,
-            autoplay:  false,
+            autoplay: {
+                delay: 2000,
+            },
             
         },
         1200: {
             slidesPerView: 4,
             spaceBetween: 30,
-            autoplay: false,
-            
+            autoplay: {
+                delay: 2000,
+            },
         },
     },
 });
+
+
+//GSAP FOR NAV BAR
+gsap.to(".company-name", {
+    scrollTrigger: {
+        trigger: "#history",
+        start: "0% 100%",
+        end: "bottom 0%",
+        scrub: .4,
+        // markers: true,
+    },
+    opacity: 1,
+
+});
+
+
+const companyName = document.querySelector('.company-name');
+const navbar = document.querySelector('.navbar');
+const menuItems = document.querySelectorAll('.menu-item');
+
+const observer = new MutationObserver(mutationsList => {
+    for (let mutation of mutationsList) {
+        if (mutation.attributeName === 'style') {
+            const opacity = parseFloat(window.getComputedStyle(companyName).getPropertyValue('opacity'));
+
+            if (opacity > 0.5) {
+                navbar.style.backgroundColor = 'white';
+                menuItems.forEach(item => {
+                    item.style.color = '#000';
+                    item.style.borderBottomColor = '#000';
+                });
+            } else {
+                navbar.style.backgroundColor = 'transparent';
+                menuItems.forEach(item => {
+                    item.style.color = '#fff'; // Set to your desired default color
+                    item.style.borderBottomColor = 'white';
+                });
+            }
+        }
+    }
+});
+
+observer.observe(companyName, {attributes: true });
+
+
+
+
