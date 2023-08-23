@@ -31,11 +31,14 @@ html, body {
 }
 html::-webkit-scrollbar-track, body::-webkit-scrollbar-track {
   border-radius: 0px;
+  display: none;
 }
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 6px;
+  display: none;
 }
 html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+  display: none;
   border-radius: 0px;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgb(122, 153, 217)), color-stop(0.72, rgb(73, 125, 189)), color-stop(0.86, rgb(28, 58, 148)));
 }
@@ -371,9 +374,10 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 .main .section-3 {
   position: relative;
-  height: 100vh;
+  height: 89vh;
   width: 100%;
   background-color: #fff;
+  overflow-y: hidden;
 }
 .main .section-3 .section-head {
   padding: 4% 20% 0% 20%;
@@ -451,6 +455,114 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   text-decoration: none;
   padding: 1px 0px;
   border-bottom: 2px solid #dddddd;
+}
+.main .section-3 .schedule {
+  height: 62vh;
+  background-image: url(./assets/img/snow-peak.png);
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  padding: 50px 20%;
+}
+@media (max-width: 767px) {
+  .main .section-3 .schedule {
+    padding: 50px 0% 50px 7%;
+  }
+}
+.main .section-3 .schedule .calendar-container {
+  height: 300px;
+  width: 352px;
+  background-color: rgba(221, 221, 221, 0.7411764706);
+  overflow: hidden;
+}
+.main .section-3 .schedule .calendar-container::-webkit-scrollbar {
+  display: none;
+}
+.main .section-3 .schedule .calendar-container .calendar-wrap {
+  overflow-x: auto;
+  height: 100%;
+  width: 200%;
+}
+.main .section-3 .schedule .calendar-container .calendar-wrap .calendar {
+  height: 100%;
+  width: 50%;
+}
+.main .section-3 .schedule .calendar-container .calendar-wrap .calendar h1 {
+  padding: 8px 20px;
+  font-family: Number;
+  color: #3e5283;
+}
+.main .section-3 .schedule .calendar-container .calendar-wrap .calendar .date-location {
+  padding: 10px 20px;
+}
+.main .section-3 .schedule .calendar-container .calendar-wrap .calendar .date-location p {
+  font-family: Paragraph;
+  font-size: 16px;
+  font-weight: 500;
+}
+.main .footer {
+  height: 7vh;
+  width: 100%;
+  padding: 1% 20%;
+  background-color: #4a5d8b;
+}
+@media (max-width: 767px) {
+  .main .footer {
+    padding: 2% 1%;
+  }
+}
+.main .footer .logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  border: 1px solid black;
+}
+.main .footer .logo img {
+  height: 100%;
+  width: 100%;
+}
+.main .footer .company-name {
+  opacity: 0;
+  font-family: Bebas;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
+.main .footer .company-name a {
+  text-decoration: none;
+}
+.main .footer .company-name .logoHead-1 {
+  letter-spacing: 1px;
+  color: #222222;
+  background-image: -webkit-linear-gradient(270deg, hsl(0, 0%, 13%) 18%, #000000 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.main .footer .company-name .logoHead-2 {
+  letter-spacing: 2px;
+  color: #11275d;
+  background-image: -webkit-linear-gradient(270deg, #11275d 55%, #171717 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.main .footer .copyright {
+  font-family: Number;
+  font-style: italic;
+  list-style: 2px;
+  color: rgba(221, 221, 221, 0.5568627451);
+  font-size: 18px;
+}
+@media (max-width: 767px) {
+  .main .footer .copyright {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
