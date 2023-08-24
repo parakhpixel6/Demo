@@ -374,7 +374,7 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 .main .section-3 {
   position: relative;
-  height: 95vh;
+  height: 92vh;
   width: 100%;
   background-color: #fff;
   overflow-y: hidden;
