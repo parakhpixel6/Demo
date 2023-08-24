@@ -277,6 +277,7 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   width: 100%;
   background-image: url(./assets/img/peak-bg.jpg);
   background-size: cover;
+  transition: background-image 0.3s ease-in-out;
 }
 .main .section-2 .section-head {
   padding: 4% 20%;
@@ -358,6 +359,10 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   object-position: center;
   overflow: hidden;
 }
+.main .section-2 .carousel .swiper-slide:hover {
+  scale: 1.05;
+  transition: scale 0.3s ease-in-out;
+}
 .main .section-2 .carousel .swiper-slide img {
   height: 100%;
   width: 100%;
@@ -370,7 +375,14 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 .main .section-2 .carousel .swiper-pagination {
   top: 102%;
-  display: none;
+}
+@media (max-width: 767px) {
+  .main .section-2 .carousel .swiper-pagination {
+    top: 90%;
+  }
+}
+.main .section-2 .carousel .swiper-pagination-bullet {
+  background: #fff;
 }
 .main .section-3 {
   position: relative;
