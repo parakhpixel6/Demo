@@ -287,7 +287,7 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   }
 }
 .main .section-2 .section-head .history-head {
-  height: 30vh;
+  height: 35vh;
 }
 .main .section-2 .section-head .sectionHead-1 {
   font-family: Number;
@@ -374,7 +374,7 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 }
 .main .section-3 {
   position: relative;
-  height: 89vh;
+  height: 95vh;
   width: 100%;
   background-color: #fff;
   overflow-y: hidden;
@@ -501,7 +501,7 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   font-weight: 500;
 }
 .main .footer {
-  height: 7vh;
+  height: 10vh;
   width: 100%;
   padding: 1% 20%;
   background-color: #4a5d8b;
